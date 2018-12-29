@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const contacts = require('./route/api/contacts');
 const projects = require('./route/api/projects');
+const employees = require('./route/api/employees');
 
 const app = express();
 
@@ -22,6 +23,7 @@ mongoose
 //Use routes
 app.use('/api/contacts', contacts);
 app.use('/api/projects', projects);
+app.use('/api/employees', employees);
 
 const port = process.env.PORT || 5000;
 
