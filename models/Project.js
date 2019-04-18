@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const WorkNoteSchema = new Schema({
@@ -11,7 +11,7 @@ const WorkNoteSchema = new Schema({
 		required: true
 	},
 	duration: Number,
-	labourExpense: [{ resource: String, expense: Number }],
+	labourExpense: [{ resource: Schema.Types.ObjectId, expense: Number }],
 	materialExpense: Number,
 	petrolExpense: Number,
 	otherExpense: Number
@@ -28,4 +28,4 @@ const ProjectSchema = new Schema({
 	workNotes: [WorkNoteSchema]
 });
 
-module.exports = mongoose.model("Project", ProjectSchema);
+module.exports = mongoose.model('Project', ProjectSchema);
